@@ -88,7 +88,7 @@ def fill_record_article(r, entry):
     """
     _require_keys_in_entry(entry, ('title', 'year', 'author', 'journal'), req_all=True)
 
-    _simple_fill(r, entry, ('title', 'year', 'note', 'key'))
+    _simple_fill(r, entry, ('title', 'year', 'note', 'key', 'abstract'))
 
     _fill_author(r, entry)
     _fill_journal(r, entry)
@@ -104,7 +104,7 @@ def fill_record_book(r, entry):
     _require_keys_in_entry(entry, ('title', 'year', 'publisher'), req_all=True)
     _require_keys_in_entry(entry, ('author', 'editor'), req_all=False)
 
-    _simple_fill(r, entry, ('title', 'year', 'note', 'key', 'volume', 'number', 'series', 'edition', 'month'))
+    _simple_fill(r, entry, ('title', 'year', 'note', 'key', 'volume', 'number', 'series', 'edition', 'month', 'abstract'))
 
     _fill_author(r, entry)
     _fill_editor(r, entry)
@@ -156,9 +156,9 @@ def fill_record_inbook(r, entry):
     :return None
     """
     _require_keys_in_entry(entry, ('author', 'editor'), req_all=False)
-    _require_keys_in_entry(entry, ('title', 'year', 'publisher'), req_all=True)
+    _require_keys_in_entry(entry, ('title', 'year', 'publisher', 'booktitle'), req_all=True)
 
-    _simple_fill(r, entry, ('title', 'year', 'note', 'key', 'volume', 'number', 'series', 'edition', 'month'))
+    _simple_fill(r, entry, ('title', 'year', 'note', 'key', 'booktitle', 'volume', 'number', 'series', 'edition', 'month', 'abstract'))
 
     _simple_fill_one_of(r, entry, ('chapter', 'pages'))
 
@@ -177,7 +177,7 @@ def fill_record_incollection(r, entry):
     _require_keys_in_entry(entry, ('author', 'publisher', 'title', 'year', 'booktitle'), req_all=True)
 
     _simple_fill(r, entry, ('title', 'year', 'booktitle', 'note', 'key', 'volume', 'number', 'series', 'chapter',
-                 'pages', 'address', 'edition', 'month'))
+                 'pages', 'address', 'edition', 'month', 'abstract'))
 
     _fill_author(r, entry)
     _fill_publisher(r, entry)
@@ -194,7 +194,7 @@ def fill_record_inproceedings(r, entry):
     _require_keys_in_entry(entry, ('author', 'title', 'year', 'booktitle'), req_all=True)
 
     _simple_fill(r, entry, ('title', 'year', 'booktitle', 'note', 'key', 'volume', 'number', 'series', 'organization',
-                 'pages', 'address', 'edition', 'month'))
+                 'pages', 'address', 'edition', 'month', 'abstract'))
 
     _fill_author(r, entry)
     _fill_editor(r, entry)

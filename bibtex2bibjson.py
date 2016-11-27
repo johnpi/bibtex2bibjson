@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 """
 A simple script to convert a single input bib-file to BibJSON output that is send to stdout.
@@ -16,8 +16,8 @@ def main():
     Script main function: Read arguments, produce BibJSON output.
     """
     if len(sys.argv) < 2:
-        print("will output BibJSON to stdout", file=sys.stderr)
-        print("usage: %s <bibtex-file>" % sys.argv[0], file=sys.stderr)
+        print("will output BibJSON to stdout")
+        print("usage: %s <bibtex-file>" % sys.argv[0])
         exit(1)
 
     bibtex_file = sys.argv[1]
